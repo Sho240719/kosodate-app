@@ -95,6 +95,8 @@ GEM
       dotenv (= 3.1.7)
       railties (>= 6.1)
     erubi (1.13.1)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hamlit (3.0.3)
@@ -240,6 +242,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
+  faker
   hamlit
   importmap-rails
   jbuilder
