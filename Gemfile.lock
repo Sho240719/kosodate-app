@@ -69,6 +69,10 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     base64 (0.2.0)
+    better_errors (2.10.1)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+      rouge (>= 1.0.0)
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
@@ -195,6 +199,7 @@ GEM
     reline (0.6.0)
       io-console (~> 0.5)
     rexml (3.4.0)
+    rouge (4.5.1)
     rubyzip (2.3.2)
     selenium-webdriver (4.27.0)
       base64 (~> 0.2)
@@ -238,6 +243,7 @@ PLATFORMS
   x86_64-darwin-23
 
 DEPENDENCIES
+  better_errors
   bootsnap
   capybara
   debug
