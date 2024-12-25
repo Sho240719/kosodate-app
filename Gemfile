@@ -81,4 +81,5 @@ group :test do
 end
 
 gem 'hamlit'
+gem 'haml-rails'
 gem 'devise'
