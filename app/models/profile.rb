@@ -19,4 +19,8 @@
 
 class Profile < ApplicationRecord
   belongs_to :user
+
+  validates :nickname, presence: true, length: { maximum: 10 }, uniqueness: true
+  validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
+  validates :introduction, length: { maximum: 100, minimum: 5 }, allow_nil: true
 end
