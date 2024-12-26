@@ -22,6 +22,15 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
   end
 
+  def update
+    @profile = current_user.profile
+    if @profile.update(profile_params)
+      redirect_to profile_path, notice: 'プロフィールを編集しました'
+    else
+      render :edit, alert: 'プロフィールの編集に失敗しました'
+    end
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:nickname, :age, :gender, :region, :introduction)

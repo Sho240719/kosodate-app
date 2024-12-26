@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'home#index'
 
-  resource :profile, only: [:show, :new, :create, :edit]
+  resource :profile, only: [:show, :new, :create, :edit, :update]
 end
