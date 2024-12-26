@@ -18,6 +18,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @profile = current_user.profile
+  end
+
   private
   def profile_params
     params.require(:profile).permit(:nickname, :age, :gender, :region, :introduction)
