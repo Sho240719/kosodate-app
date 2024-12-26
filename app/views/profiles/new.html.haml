@@ -1,1 +1,25 @@
-%h1 NEW
+%h1 プロフィール作成
+
+= form_with(model: @profile, url: profile_path, local: true) do |f|
+  .form-group
+    = f.label :nickname, 'ニックネーム'
+    = f.text_field :nickname, required: true, class: 'form-control'
+
+  .form-group
+    = f.label :age, '年齢'
+    = f.number_field :age, min: 0, class: 'form-control'
+
+  .form-group
+    = f.label :gender, '性別'
+    = f.select :gender, [['未選択', nil], ['男性', '男性'], ['女性', '女性']], { include_blank: false }, class: 'form-control'
+
+  .form-group
+    = f.label :region, '地域'
+    = f.text_field :region, class: 'form-control'
+
+  .form-group
+    = f.label :introduction, '自己紹介'
+    = f.text_area :introduction, rows: 5, class: 'form-control'
+
+  .form-group
+    = f.submit '送信', class: 'btn btn-primary'
