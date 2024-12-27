@@ -26,4 +26,6 @@ class Profile < ApplicationRecord
   validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
   validates :gender, inclusion: { in: genders.keys }, allow_nil: true
   validates :introduction, length: { maximum: 100, minimum: 5 }, allow_nil: true
+
+  has_one_attached :avatar
 end

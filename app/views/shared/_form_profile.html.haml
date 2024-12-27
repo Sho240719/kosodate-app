@@ -7,6 +7,10 @@
           %li= message
 
   .form-group
+    = f.label :avatar, 'アバター'
+    = f.file_field :avatar, class: 'form-control'
+
+  .form-group
     = f.label :nickname, 'ニックネーム'
     = f.text_field :nickname, required: true, class: 'form-control'
 
