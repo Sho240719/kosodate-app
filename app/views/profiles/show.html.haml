@@ -1,2 +1,24 @@
-%h1 SHOW
-= link_to 'プロフィールを編集', edit_profile_path
+.container
+  %h2 プロフィール情報
+  = link_to 'プロフィールを編集', edit_profile_path, class: 'btn edit'
+
+  .profile-info
+    .profile-name
+      %p ニックネーム
+      = current_user.profile.nickname
+    %br
+    .profile-age
+      %p 年齢
+      = current_user.profile.age
+    %br
+    .profile-gender
+      %p 性別
+      = current_user.profile.gender
+    %br
+    .profile-region
+      %p 地域
+      = current_user.profile.region
+    %br
+    .profile-introduction
+      %p 自己紹介
+      = current_user.profile.introduction
