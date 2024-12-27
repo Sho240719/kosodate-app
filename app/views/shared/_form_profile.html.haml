@@ -1,7 +1,6 @@
 = form_with(model: profile, url: profile_path, local: true) do |f|
-  - if @profile.errors.any?
+  - if profile.errors.any?
     .alert.alert-danger
-      %h4 エラーがあります。以下を修正してください。
       %ul
         - profile.errors.full_messages.each do |message|
           %li= message

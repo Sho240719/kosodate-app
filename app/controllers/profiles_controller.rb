@@ -14,7 +14,8 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path, notice: 'プロフィールを作成しました'
     else
-      render :new, alert: 'プロフィールの作成に失敗しました'
+      flash.now[:error] = 'プロフィールの作成に失敗しました'
+      render :new
     end
   end
 
@@ -27,7 +28,8 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profile_path, notice: 'プロフィールを編集しました'
     else
-      render :edit, alert: 'プロフィールの編集に失敗しました'
+      flash.now[:error] = 'プロフィールの編集に失敗しました'
+      render :edit
     end
   end
 
