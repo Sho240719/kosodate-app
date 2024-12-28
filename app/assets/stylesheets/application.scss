@@ -1,0 +1,133 @@
+.container.profile {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-avatar {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .avatar-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ddd;
+      margin-bottom: 10px;
+
+      &.default {
+        border-color: #ccc;
+      }
+    }
+
+    .btn.edit {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+      }
+
+      .value {
+        font-size: 16px;
+        color: #333;
+      }
+    }
+  }
+
+  .btn.logout {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+
+// アバターのアイコン
+.avatar-icon {
+  width: 100px;
+  border: 1px solid #9e9e9edb;
+  border-radius: 30px;
+}
+
+// メッセージ表示
+.notice,
+.alert {
+  // position: absolute;
+  position: fixed;
+  top: 20px; /* 上から20pxの位置に表示 */
+  left: 50%;
+  transform: translateX(-50%); /* 真ん中に表示 */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000; /* 他の要素の上に表示されるように */
+  width: auto;
+  max-width: 90%; /* 必要に応じて幅を調整 */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつけて浮かせた感じに */
+}
+
+.notice {
+  background-color: #dff0d8; /* 淡い緑 */
+  color: #3c763d;
+  border: 1px solid #3c763d;
+}
+
+.alert {
+  background-color: #f2dede; /* 淡い赤 */
+  color: #a94442;
+  border: 1px solid #a94442;
+}
