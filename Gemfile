@@ -83,3 +83,4 @@ end
 gem 'hamlit'
 gem 'haml-rails'
 gem 'devise'
+gem 'sassc-rails'
