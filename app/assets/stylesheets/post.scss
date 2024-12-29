@@ -1,0 +1,51 @@
+.post {
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .post-avatar-icon {
+        width: 40px;
+        border: 1px solid $border-color;
+        border-radius: 50%;
+      }
+
+      .user-name {
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+
+    .post-timestamp {
+      font-size: 0.8rem;
+      color: #999;
+    }
+  }
+
+  &-content {
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  &-actions {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.pencil-icon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+}

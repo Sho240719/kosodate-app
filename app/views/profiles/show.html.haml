@@ -1,6 +1,6 @@
 = link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'ログアウトしますか？'}
 
-.container.profile
+.profile-container
   %h2.profile-heading プロフィール情報
 
   .profile-content
@@ -30,4 +30,4 @@
 
       .detail-item
         %p.label 自己紹介
-        %p.value= current_user.profile.introduction
+        %p.value= current_user.profile.introduction 

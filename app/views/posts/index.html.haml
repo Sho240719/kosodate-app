@@ -1,0 +1,26 @@
+.container
+  %h2 ポスト一覧
+
+  - @posts.each do |post|
+    .post
+      .post-header
+        .user-info
+          .avatar-image
+            - if current_user.profile&.avatar&.attached?
+              = image_tag current_user.profile.avatar, class: 'post-avatar-icon'
+            - else
+              = image_tag 'default_avatar.png', class: 'post-avatar-icon'
+          %span.user-name= post.user.profile.nickname
+        %span.post-timestamp= post.created_at
+      .post-content
+        %p= post.content
+      .post-actions
+        %span.like
+          = image_tag 'like_inactive.png'
+          0
+        %span.comment
+          = image_tag 'comment.png'
+          0
+
+
+= image_tag 'pencil_icon.png', class: 'pencil-icon'
