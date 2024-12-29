@@ -15,4 +15,17 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+
+  validates :content, presence: true, length: { maximum: 100 }
+  validate :validate_prohibited_words
+
+  private
+  def validate_prohibited_words
+    prohibited_words = [ "xx", "yy" ]
+    return if content.blank?
+
+    if prohibited_words.any? { |word| content.include?(word) }
+      errors.add(:content, 'に不適切な文字が含まれています。')
+    end
+  end
 end
