@@ -72,3 +72,41 @@
     width: 60px;
   }
 }
+
+// newページ
+.post-new {
+  height: 400px;
+  padding: 50px 90px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+
+  .cancel {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+  }
+
+  .post-avatar-icon {
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    width: 50px;
+  }
+
+  .post-form {
+    display: flex;
+    flex-direction: column;    /* 子要素を縦に並べる */
+    align-items: center;       /* 子要素を横方向に中央寄せ */
+    justify-content: center;   /* 子要素を縦方向に中央寄せ（高さ調整） */
+
+    .post-textarea {
+      width: 500px;
+      height: 200px;
+    }
+
+    .post-btn {
+      margin-top: 15px;
+    }
+  }
+}
