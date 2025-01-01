@@ -1,0 +1,15 @@
+.container
+  %h2 ポストを作成
+
+  .post.post-new
+    = link_to 'キャンセル', posts_path,class: 'cancel'
+    .avatar-image
+      - if current_user.profile&.avatar&.attached?
+        = image_tag current_user.profile.avatar, class: 'post-avatar-icon'
+      - else
+        = image_tag 'default_avatar.png', class: 'post-avatar-icon'
+
+    = form_with(model: @post, local: true) do |f|
+      .post-form
+        = f.text_area :content, class: 'post-textarea', placeholder: '投稿内容を入力してください'
+        = f.submit '投稿する', class: 'btn-primary post-btn'

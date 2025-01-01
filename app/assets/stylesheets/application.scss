@@ -1,4 +1,50 @@
-.container.profile {
+@import 'normalize';
+@import 'variables';
+@import 'post';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #f7f3f3;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 200px;
+}
+
+.btn-primary {
+  width: 200px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: $primary-color;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+}
+
+// profileに関するcss
+.profile-container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
@@ -102,6 +148,7 @@
   border: 1px solid #9e9e9edb;
   border-radius: 30px;
 }
+
 
 // メッセージ表示
 .notice,

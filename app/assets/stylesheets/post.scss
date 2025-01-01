@@ -1,0 +1,112 @@
+@import 'variables';
+
+.post {
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  background-color: #ffffff;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .post-avatar-icon {
+        border: 1px solid $border-color;
+        border-radius: 50%;
+      }
+
+      .user-name {
+        color: $text-color;
+      }
+    }
+
+    .post-timestamp {
+      font-size: 0.8rem;
+      color: #999;
+    }
+  }
+
+  &-content {
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  &-actions {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+// indexページ
+.post-index {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  .post-avatar-icon {
+    width: 40px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+}
+
+.pencil-icon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+}
+
+// showページ
+.post-show {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 30px;
+
+  .post-avatar-icon {
+    width: 60px;
+  }
+}
+
+// newページ
+.post-new {
+  height: 400px;
+  padding: 50px 90px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+
+  .cancel {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+  }
+
+  .post-avatar-icon {
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    width: 50px;
+  }
+
+  .post-form {
+    display: flex;
+    flex-direction: column;    /* 子要素を縦に並べる */
+    align-items: center;       /* 子要素を横方向に中央寄せ */
+    justify-content: center;   /* 子要素を縦方向に中央寄せ（高さ調整） */
+
+    .post-textarea {
+      width: 500px;
+      height: 200px;
+    }
+
+    .post-btn {
+      margin-top: 15px;
+    }
+  }
+}
