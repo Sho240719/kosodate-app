@@ -16,6 +16,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  has_many :comments, dependent: :destroy
+
   validates :content, presence: true, length: { maximum: 100 }
   validate :validate_prohibited_words
 
