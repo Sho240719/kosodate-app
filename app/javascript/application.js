@@ -2,11 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import $ from 'jquery';
+import axios from "axios";
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("jQuery is working!");
-
-  $('h1').on('click', () => {
-    window.alert('Hello!');
-  })
-});
+// AxiosにCSRFトークンを設定
+const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
