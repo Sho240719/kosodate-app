@@ -14,8 +14,7 @@
     .post-actions
       %span.like
         = image_tag 'like_inactive.png'
-        0
       %span.comment
         = image_tag 'comment.png'
-        0
 
+  .comments-section{ 'id' => 'post-comments', 'data-post-id' => @post.id }

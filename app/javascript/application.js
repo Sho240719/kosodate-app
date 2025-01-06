@@ -7,3 +7,38 @@ import axios from "axios";
 // AxiosにCSRFトークンを設定
 const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
+
+document.addEventListener("turbo:load", () => {
+  // `data-post-id`からpostIdを取得
+  const commentsElement = $("#post-comments");
+  if (commentsElement.length > 0) {
+    const postId = commentsElement.data("post-id");
+
+    axios.get(`/api/posts/${postId}/comments`)
+    .then(response => {
+      const comments = response.data
+      comments.forEach ((comment) => {
+        const avatarImageUrl = comment.user.profile.avatar_image_url;
+        const nickname = comment.user.profile.nickname;
+
+        $('.comments-section').append(`
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-user-info">
+                <img src="${avatarImageUrl}" class="comment-avatar-icon">
+                <p class="nickname">${nickname}</p>
+              </div>
+              <span class="comment-timestamp">${comment.created_at}</span>
+            </div>
+            <div class="comment-content">
+              <p>${comment.content}</p>
+            </div>
+          </div>
+        `);
+      });
+    })
+    .catch(error => {
+      console.error("コメントの取得に失敗しました:", error);
+    });
+  }
+});

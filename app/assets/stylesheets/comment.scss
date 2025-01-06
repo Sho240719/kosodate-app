@@ -1,0 +1,36 @@
+@import 'variables';
+
+.comments-section {
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  background-color: #ffffff;
+  max-width: 1000px;
+  margin: 20px auto;
+
+  .comment-item {
+    padding: 20px;
+    position: relative;
+
+    & + .comment-item {
+      border-top: 1px solid $border-color;
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .comment-user-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .comment-avatar-icon {
+          width: 40px;
+          border: 1px solid $border-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
