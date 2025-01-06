@@ -14,6 +14,7 @@ document.addEventListener("turbo:load", () => {
   if (commentsElement.length > 0) {
     const postId = commentsElement.data("post-id");
 
+    // コメント一覧を表示
     axios.get(`/api/posts/${postId}/comments`)
     .then(response => {
       const comments = response.data
@@ -41,4 +42,18 @@ document.addEventListener("turbo:load", () => {
       console.error("コメントの取得に失敗しました:", error);
     });
   }
+
+
+
+  // コメントフォームを表示
+  $('.show-comment-button').on('click',function() {
+    $(this).addClass('hidden');
+    $('.comment-form-textarea').removeClass('hidden');
+  })
+
+  // コメント追加時にフォームを非表示
+  $('.add-comment-button').on('click',() => {
+    $('.comment-form-textarea').addClass('hidden');
+    $('.show-comment-button').removeClass('hidden');
+  })
 });

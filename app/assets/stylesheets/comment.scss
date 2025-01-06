@@ -34,3 +34,27 @@
     }
   }
 }
+
+.show-comment-button, .add-comment-button {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  background-color: $primary-color;
+  border-radius: 10px;
+}
+
+.comment-form-textarea {
+  width: 800px;
+  margin: 0 auto;
+
+  .comment-textarea {
+    width: 800px;
+    height: 100px;
+    margin: 20px 0;
+  }
+}

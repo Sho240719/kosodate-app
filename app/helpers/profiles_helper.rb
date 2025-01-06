@@ -1,6 +1,6 @@
 module ProfilesHelper
   # プロフィール画像があれば表示、なければデフォルト画像を表示
-  def avatar_display(profile, user)
+  def avatar_display(user)
     if user.profile&.avatar&.attached?
       image_tag user.profile.avatar, class: 'avatar-icon'
     else
