@@ -80,7 +80,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem 'active_model_serializers'
+gem 'devise'
 gem 'hamlit'
 gem 'haml-rails'
-gem 'devise'
 gem 'sassc-rails'
