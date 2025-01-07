@@ -7,13 +7,4 @@ module ProfilesHelper
       image_tag 'default_avatar.png', class: 'avatar-icon'
     end
   end
-
-  # プロフィール画像があればそのURLを返す。なければデフォルト画像のURLを返す
-  def avatar_url(profile)
-    if profile&.avatar&.attached?
-      url_for(profile.avatar)
-    else
-      ActionController::Base.helpers.asset_path('default_avatar')
-    end
-  end
 end
