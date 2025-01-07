@@ -1,22 +1,22 @@
 class Api::CommentsController < Api::ApplicationController
-  include ProfilesHelper # ヘルパーメソッドをコントローラーで利用可能にする
-
   def index
     post = Post.find(params[:post_id])
-    comments = post.comments.includes(user: :profile)
+    comments = post.comments.eager_load(user: :profile)
+    render json: comments, include: ['user.profile']
+  end
 
-    render json: comments.map { |comment|
-      {
-        id: comment.id,
-        content: comment.content,
-        created_at: comment.created_at.strftime('%Y-%m-%d'), # フォーマットを指定
-        user: {
-          profile: {
-            nickname: comment.user.profile.nickname,
-            avatar_image_url: avatar_url(comment.user.profile)
-          }
-        }
-      }
-    }
+  def create
+    post = Post.find(params[:post_id])
+    comment = post.comments.build(comment_params.merge(user: current_user))
+    if comment.save
+      render json: comment, include: ['user.profile'], status: :created
+    else
+      render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+  def comment_params
+    params.require(:comment).permit(:content)
   end
 end

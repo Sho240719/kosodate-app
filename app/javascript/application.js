@@ -17,7 +17,7 @@ document.addEventListener("turbo:load", () => {
     // コメント一覧を表示
     axios.get(`/api/posts/${postId}/comments`)
     .then(response => {
-      const comments = response.data
+      const comments = response.data.comments
       comments.forEach ((comment) => {
         const avatarImageUrl = comment.user.profile.avatar_image_url;
         const nickname = comment.user.profile.nickname;
@@ -41,19 +41,45 @@ document.addEventListener("turbo:load", () => {
     .catch(error => {
       console.error("コメントの取得に失敗しました:", error);
     });
-  }
 
+
+    // コメントを追加
+    $('.add-comment-button').on('click', () => {
+      const content = $('.comment-textarea').val();
+      axios.post(`/api/posts/${postId}/comments`, {
+        comment: { content: content }
+      })
+      .then((response) => {
+        const comment = response.data.comment
+        const avatarImageUrl = comment.user.profile.avatar_image_url;
+        const nickname = comment.user.profile.nickname;
+
+        $('.comments-section').append(`
+          <div class="comment-item">
+            <div class="comment-header">
+              <div class="comment-user-info">
+                <img src="${avatarImageUrl}" class="comment-avatar-icon">
+                <p class="nickname">${nickname}</p>
+              </div>
+              <span class="comment-timestamp">${comment.created_at}</span>
+            </div>
+            <div class="comment-content">
+              <p>${comment.content}</p>
+            </div>
+          </div>
+        `);
+        // コメント追加時にフォームを空にして非表示
+        $('.comment-textarea').val('');
+        $('.comment-form-textarea').addClass('hidden');
+        $('.show-comment-button').removeClass('hidden');
+      });
+    })
+  }
 
 
   // コメントフォームを表示
   $('.show-comment-button').on('click',function() {
     $(this).addClass('hidden');
     $('.comment-form-textarea').removeClass('hidden');
-  })
-
-  // コメント追加時にフォームを非表示
-  $('.add-comment-button').on('click',() => {
-    $('.comment-form-textarea').addClass('hidden');
-    $('.show-comment-button').removeClass('hidden');
   })
 });
