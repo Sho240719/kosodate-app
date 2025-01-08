@@ -24,6 +24,7 @@ document.addEventListener("turbo:load", () => {
 
         $('.comments-section').append(`
           <div class="comment-item">
+            ${comment.is_own_comment ? `<span class="delete">削除</span>` : ""}
             <div class="comment-header">
               <div class="comment-user-info">
                 <img src="${avatarImageUrl}" class="comment-avatar-icon">
