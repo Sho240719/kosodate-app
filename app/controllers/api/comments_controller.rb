@@ -20,7 +20,7 @@ class Api::CommentsController < Api::ApplicationController
     comment = post.comments.find(params[:id])
     comment.destroy!
 
-    render json: comment
+    head :no_content
   end
 
   private
