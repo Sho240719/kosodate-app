@@ -1,6 +1,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'post';
+@import 'comment';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -42,6 +43,11 @@ a {
       opacity: 0.7;
     }
 }
+
+.hidden {
+  display: none;
+}
+
 
 // profileに関するcss
 .profile-container {

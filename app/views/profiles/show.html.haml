@@ -5,10 +5,7 @@
 
   .profile-content
     .profile-avatar
-      - if current_user.profile&.avatar&.attached?
-        = image_tag current_user.profile.avatar, class: 'avatar-icon'
-      - else
-        = image_tag 'default_avatar.png', class: 'avatar-icon'
+      = avatar_display(current_user)
       = link_to 'プロフィールを編集', edit_profile_path, class: 'btn edit'
 
     .profile-details
@@ -30,4 +27,4 @@
 
       .detail-item
         %p.label 自己紹介
-        %p.value= current_user.profile.introduction 
+        %p.value= current_user.profile.introduction

@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :new, :create, :destroy]
 
   resource :profile, only: [:show, :new, :create, :edit, :update]
+
+  namespace :api do
+    scope 'posts/:post_id' do
+      resources :comments, only: [:index, :create, :destroy]
+    end
+  end
 end

@@ -14,8 +14,15 @@
     .post-actions
       %span.like
         = image_tag 'like_inactive.png'
-        0
       %span.comment
         = image_tag 'comment.png'
-        0
 
+  .comments-section{ 'id' => 'post-comments', 'data-post-id' => @post.id }
+
+  .comment-form
+    .show-comment-button
+      コメントを追加
+    .comment-form-textarea.hidden
+      = text_area_tag :comment_content, nil, class: 'comment-textarea'
+      .add-comment-button
+        コメントを追加
