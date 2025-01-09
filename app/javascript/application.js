@@ -23,7 +23,7 @@ document.addEventListener("turbo:load", () => {
         const nickname = comment.user.profile.nickname;
 
         $('.comments-section').append(`
-          <div class="comment-item">
+          <div class="comment-item" data-comment-id="${comment.id}">
             ${comment.is_own_comment ? `<span class="delete">削除</span>` : ""}
             <div class="comment-header">
               <div class="comment-user-info">
@@ -51,12 +51,13 @@ document.addEventListener("turbo:load", () => {
         comment: { content: content }
       })
       .then((response) => {
-        const comment = response.data.comment
+        const comment = response.data.comment;
         const avatarImageUrl = comment.user.profile.avatar_image_url;
         const nickname = comment.user.profile.nickname;
 
         $('.comments-section').append(`
-          <div class="comment-item">
+          <div class="comment-item" data-comment-id="${comment.id}">
+            ${comment.is_own_comment ? `<span class="delete">削除</span>` : ""}
             <div class="comment-header">
               <div class="comment-user-info">
                 <img src="${avatarImageUrl}" class="comment-avatar-icon">
@@ -75,6 +76,22 @@ document.addEventListener("turbo:load", () => {
         $('.show-comment-button').removeClass('hidden');
       });
     })
+
+
+    // コメントを削除
+    $('.comments-section').on('click', '.delete', function() {
+      const commentItem = $(this).closest('.comment-item');
+      const commentId = commentItem.data('comment-id');
+
+      if (confirm('コメントを削除しますか？')) {
+          axios.delete(`/api/posts/${postId}/comments/${commentId}`)
+          .then(() => {
+            commentItem.remove();
+          });
+      } else {
+        window.alert('削除をキャンセルしました')
+      }
+    });
   }
 
 
