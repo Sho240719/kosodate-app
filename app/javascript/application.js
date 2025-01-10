@@ -2,5 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import initializeComments from "./modules/comment";
+import initializeLikes from "./modules/like";
 
 initializeComments();
+initializeLikes();
