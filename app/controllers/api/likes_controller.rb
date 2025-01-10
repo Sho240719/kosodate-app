@@ -8,4 +8,14 @@ class Api::LikesController < Api::ApplicationController
       render json: { status: 'error' }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    post = Post.find(params[:post_id])
+    like = post.likes.find_by(user: current_user)
+    if like.destroy
+      render json: { status: 'unliked' }
+    else
+      render json: { status: 'error' }, status: :unprocessable_entity
+    end
+  end
 end
