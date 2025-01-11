@@ -12,10 +12,10 @@
     .post-content
       %p= @post.content
     .post-action
-      %span.like-button{ data: { liked: current_user.likes.exists?(post_id: @post.id) ? 'true' : 'false' } }
-        - if current_user.likes.exists?(post_id: @post.id)
+      %span.like-button
+        .active-heart.hidden
           = image_tag 'like_active.png',class: 'like-image'
-        - else
+        .inactive-heart.hidden
           = image_tag 'like_inactive.png',class: 'like-image'
       %p.post-action-message 参考になったらいいねしてみよう！
 
