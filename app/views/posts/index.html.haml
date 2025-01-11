@@ -18,7 +18,7 @@
         .post-actions
           %span.like
             = image_tag 'like_inactive.png'
-            0
+            = post.likes.count
           %span.comment
             = image_tag 'comment.png'
             0

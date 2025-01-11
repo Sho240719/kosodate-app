@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     scope 'posts/:post_id' do
       resources :comments, only: [:index, :create, :destroy]
+      resource :like, only: [:show, :create, :destroy]
     end
   end
 end

@@ -11,11 +11,14 @@
       = link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }
     .post-content
       %p= @post.content
-    .post-actions
-      %span.like
-        = image_tag 'like_inactive.png'
-      %span.comment
-        = image_tag 'comment.png'
+    .post-action
+      %span.like-button
+        .active-heart.hidden
+          = image_tag 'like_active.png',class: 'like-image'
+        .inactive-heart.hidden
+          = image_tag 'like_inactive.png',class: 'like-image'
+      %p.post-action-message 参考になったらいいねしてみよう！
+
 
   .comments-section{ 'id' => 'post-comments', 'data-post-id' => @post.id }
 
