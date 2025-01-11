@@ -1,0 +1,21 @@
+.user-profile
+  %h2.user-profile-heading プロフィール情報
+
+  .user-profile-content
+    .user-profile-header
+      .user-profile-avatar
+        = avatar_display(user)
+      .user-profile-info
+        %h3= user.profile.nickname
+        .user-profile-details
+          %span.user-profile-detail-item= "年齢： #{user.profile.age}歳"
+          %span.user-profile-detail-item= "性別： #{user.profile.gender}"
+          %span.user-profile-detail-item= "地域： #{user.profile.region}"
+
+    - if link_label.present? && link_path.present?
+      = link_to link_label, link_path, class: 'button-secondary'
+    -#   = link_to 'プロフィールを編集', edit_profile_path, class: 'button-secondary'
+
+    .user-profile-introduction
+      %p.user-profile-label 自己紹介
+      %p.user-profile-value= user.profile.introduction
