@@ -2,12 +2,14 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title KosodateApp
+    %title Familink
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
+    %link{ rel: "icon", href: asset_path("site_logo.png"), type: "image/png" }
+    %link{ rel: "shortcut icon", href: asset_path("site_logo.png"), type: "image/png" }
   %body
     = render 'layouts/header'
 
