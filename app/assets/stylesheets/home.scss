@@ -13,13 +13,23 @@
   max-width: 50%;
 }
 
-.home-title {
+.home-title-section {
+  display: flex;
+  align-items: center;
+}
+
+.home-primary-title {
   font-size: 55px;
-  margin-bottom: 45px;
 }
 
 .home-subtitle {
   font-size: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.home-description-text {
+  font-size: 21px;
   line-height: 1.7;
 }
 
