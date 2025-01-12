@@ -3,6 +3,5 @@
     %span= image_tag 'site_logo.png',class: 'header-site-logo'
     %span.header-site-name Familink
   .header-right
-    = link_to "投稿一覧", posts_path, class: "header-nav-link"
-    = link_to "プロフィール", profile_path, class: "header-nav-link"
-    = login_logout_link
+    = header_navigation_links
+
