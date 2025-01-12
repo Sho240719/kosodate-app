@@ -3,10 +3,8 @@
     .post-header
       .user-info
         .avatar-image
-          - if current_user.profile&.avatar&.attached?
-            = image_tag current_user.profile.avatar, class: 'post-avatar-icon'
-          - else
-            = image_tag 'default_avatar.png', class: 'post-avatar-icon'
+          = link_to account_path(@post.user) do
+            = avatar_display(@post.user, class_name: 'post-avatar-icon')
         %span.user-name= @post.user.profile.nickname
       = link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }
     .post-content

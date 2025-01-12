@@ -7,10 +7,7 @@
         .post-header
           .user-info
             .avatar-image
-              - if current_user.profile&.avatar&.attached?
-                = image_tag current_user.profile.avatar, class: 'post-avatar-icon'
-              - else
-                = image_tag 'default_avatar.png', class: 'post-avatar-icon'
+              = avatar_display(post.user, class_name: 'post-avatar-icon')
             %span.user-name= post.user.profile.nickname
           %span.post-timestamp= post.created_at
         .post-content
