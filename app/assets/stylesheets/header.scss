@@ -1,0 +1,36 @@
+@import 'variables';
+
+.header {
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &-left {
+    align-items: center;
+  }
+
+  &-site-logo {
+    width: 20px;
+    margin-right: 5px;
+  }
+
+  &-site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  }
+
+  &-nav-link {
+    margin-left: 15px;
+    padding: 5px 12px;
+    color: #fff;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}

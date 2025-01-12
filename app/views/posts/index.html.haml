@@ -12,13 +12,6 @@
           %span.post-timestamp= post.created_at
         .post-content
           %p= post.content
-        .post-actions
-          %span.like
-            = image_tag 'like_inactive.png'
-            = post.likes.count
-          %span.comment
-            = image_tag 'comment.png'
-            0
 
 = link_to new_post_path do
   = image_tag 'pencil_icon.png', class: 'pencil-icon'

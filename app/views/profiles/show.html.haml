@@ -1,3 +1,1 @@
-= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'ログアウトしますか？'}
-
 = render 'shared/user_show', user: current_user, link_label: 'プロフィールを編集', link_path: edit_profile_path
