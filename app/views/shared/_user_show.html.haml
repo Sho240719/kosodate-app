@@ -17,8 +17,10 @@
     - else
       - if current_user.has_liked?(user)
         %span.button-secondary.button-unfollow{ data: { account_id: account_id } } アンフォロー
+        %span.button-secondary.button-follow.hidden{ data: { account_id: account_id } } フォロー
       - else
         %span.button-secondary.button-follow{ data: { account_id: account_id } } フォロー
+        %span.button-secondary.button-unfollow.hidden{ data: { account_id: account_id } } アンフォロー
 
     .user-profile-introduction
       %p.user-profile-label 自己紹介

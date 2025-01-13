@@ -5,7 +5,16 @@ import axios from "axios";
 const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
 
-
+// フォロー状態によってボタンの表示を切り替え
+function toggleFollowsDisplay(hasFollow) {
+  if (hasFollow === 'followed') {
+    $('.button-follow').addClass('hidden');
+    $('.button-unfollow').removeClass('hidden');
+  } else {
+    $('.button-unfollow').addClass('hidden');
+    $('.button-follow').removeClass('hidden');
+  }
+}
 
 function initializeFollows() {
   document.addEventListener('turbo:load', () => {
@@ -15,8 +24,7 @@ function initializeFollows() {
       const accountId = $('.button-follow').data('account-id');
       axios.post(`/api/accounts/${accountId}/follows`)
       .then((response) => {
-        console.log('フォローできました');
-        console.log(response.data.status);
+        toggleFollowsDisplay(response.data.status);
       })
       .catch(error => {
         console.error('フォローできませんでした', error);
@@ -29,8 +37,7 @@ function initializeFollows() {
       const accountId = $('.button-unfollow').data('account-id');
       axios.post(`/api/accounts/${accountId}/unfollows`)
       .then((response) => {
-        console.log('アンフォローしました');
-        console.log(response.data.status);
+        toggleFollowsDisplay(response.data.status);
       })
       .catch(error => {
         console.error('アンフォローできませんでした', error);
