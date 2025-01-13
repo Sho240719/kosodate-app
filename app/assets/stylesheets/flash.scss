@@ -1,0 +1,39 @@
+@import 'variables';
+
+// メッセージ表示
+.notice,
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* 真ん中に表示 */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10; /* 他の要素の上に表示されるように */
+  width: auto;
+  max-width: 90%; /* 必要に応じて幅を調整 */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつけて浮かせた感じに */
+  opacity: 1; /* 初期状態で完全に表示 */
+  visibility: visible; /* 初期状態で表示 */
+  animation: fade-out 2s ease-in-out forwards; /* アニメーションの適用 */
+  background-color: $secondary-color; /* 淡い緑 */
+  color: #fff;
+  border: 1px solid $secondary-color;
+}
+
+/* アニメーション定義 */
+@keyframes fade-out {
+  0% {
+    opacity: 1; /* 完全に表示 */
+    visibility: visible;
+  }
+  80% {
+    opacity: 1; /* 表示されたまま */
+    visibility: visible;
+  }
+  100% {
+    opacity: 0; /* フェードアウト */
+    visibility: hidden; /* 完全に非表示 */
+  }
+}
