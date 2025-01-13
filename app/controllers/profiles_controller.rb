@@ -6,7 +6,11 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = current_user.build_profile
+    if current_user.profile.present?
+      redirect_to profile_path
+    else
+      @profile = current_user.build_profile
+    end
   end
 
   def create
