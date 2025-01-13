@@ -12,8 +12,15 @@
           %span.user-profile-detail-item= "性別： #{user.profile.gender}"
           %span.user-profile-detail-item= "地域： #{user.profile.region}"
 
-    - if link_label.present? && link_path.present?
+    - if defined?(link_label) && link_label.present? && defined?(link_path) && link_path.present?
       = link_to link_label, link_path, class: 'button-secondary'
+    - else
+      - if current_user.has_liked?(user)
+        %span.button-secondary.button-unfollow{ data: { account_id: account_id } } アンフォロー
+        %span.button-secondary.button-follow.hidden{ data: { account_id: account_id } } フォロー
+      - else
+        %span.button-secondary.button-follow{ data: { account_id: account_id } } フォロー
+        %span.button-secondary.button-unfollow.hidden{ data: { account_id: account_id } } アンフォロー
 
     .user-profile-introduction
       %p.user-profile-label 自己紹介
