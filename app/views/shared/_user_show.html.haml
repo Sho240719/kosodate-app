@@ -12,8 +12,10 @@
           %span.user-profile-detail-item= "性別： #{user.profile.gender}"
           %span.user-profile-detail-item= "地域： #{user.profile.region}"
 
-    - if link_label.present? && link_path.present?
+    - if defined?(link_label) && link_label.present? && defined?(link_path) && link_path.present?
       = link_to link_label, link_path, class: 'button-secondary'
+    - else
+      %span.button-secondary.follow-button{ data: { account_id: account_id } } フォロー
 
     .user-profile-introduction
       %p.user-profile-label 自己紹介

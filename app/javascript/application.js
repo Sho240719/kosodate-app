@@ -3,6 +3,8 @@ import '@hotwired/turbo-rails'
 import 'controllers'
 import initializeComments from './modules/comment';
 import initializeLikes from './modules/like';
+import initializeFollows from './modules/follow';
 
 initializeComments();
 initializeLikes();
+initializeFollows();
