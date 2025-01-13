@@ -56,6 +56,13 @@ a {
   border-radius: 5px;
 }
 
+.button-follow,
+.button-unfollow {
+  display: inline-block;
+  width: 145px;
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }

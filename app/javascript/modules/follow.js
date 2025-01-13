@@ -10,9 +10,10 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken;
 function initializeFollows() {
   document.addEventListener('turbo:load', () => {
     // accountIdを取得
-    const accountId = $('.follow-button').data('account-id');
+    const accountId = $('.button-follow').data('account-id');
 
-    $('.follow-button').on ('click', () => {
+    // フォローする
+    $('.button-follow').on ('click', () => {
       axios.post(`/api/accounts/${accountId}/follows`)
       .then((response) => {
         console.log('フォローできました');
@@ -21,6 +22,19 @@ function initializeFollows() {
       .catch(error => {
         console.error('フォローできませんでした', error);
         alert('フォローできませんでした');
+      });
+    })
+
+    // アンフォローする
+    $('.button-unfollow').on('click', () => {
+      axios.post(`/api/accounts/${accountId}/unfollows`)
+      .then((response) => {
+        console.log('アンフォローしました');
+        console.log(response.data.status);
+      })
+      .catch(error => {
+        console.error('アンフォローできませんでした', error);
+        alert('アンフォローできませんでした');
       });
     })
   })

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
     scope 'accounts/:account_id' do
       resources :follows, only: [:create]
+      resources :unfollows, only: [:create]
     end
   end
 end

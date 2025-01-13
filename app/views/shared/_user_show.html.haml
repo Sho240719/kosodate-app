@@ -15,7 +15,8 @@
     - if defined?(link_label) && link_label.present? && defined?(link_path) && link_path.present?
       = link_to link_label, link_path, class: 'button-secondary'
     - else
-      %span.button-secondary.follow-button{ data: { account_id: account_id } } フォロー
+      %span.button-secondary.button-follow{ data: { account_id: account_id } } フォロー
+      %span.button-secondary.button-unfollow{ data: { account_id: account_id } } アンフォロー
 
     .user-profile-introduction
       %p.user-profile-label 自己紹介
