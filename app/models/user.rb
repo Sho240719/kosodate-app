@@ -27,6 +27,10 @@ class User < ApplicationRecord
     relation.destroy!
   end
 
+  def has_liked?(user)
+    followings.exists?(id: user.id)
+  end
+
   private
   def get_user_id(user)
     if user.is_a?(User)
