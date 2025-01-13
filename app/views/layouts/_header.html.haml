@@ -1,7 +1,13 @@
 %header.header
-  .header-left
-    %span= image_tag 'site_logo.png',class: 'header-site-logo'
-    %span.header-site-name Familink
+  - if !user_signed_in?
+    = link_to root_path do
+      .header-left
+        %span= image_tag 'site_logo.png',class: 'header-site-logo'
+        %span.header-site-name Familink
+  - else
+    .header-left
+      %span= image_tag 'site_logo.png',class: 'header-site-logo'
+      %span.header-site-name Familink
   .header-right
     = header_navigation_links
 
