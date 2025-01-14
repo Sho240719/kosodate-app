@@ -81,6 +81,7 @@ group :test do
 end
 
 gem 'active_model_serializers'
+gem 'aws-sdk-s3'
 gem 'devise'
 gem 'hamlit'
 gem 'haml-rails'
