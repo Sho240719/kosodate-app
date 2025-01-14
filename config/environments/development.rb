@@ -71,5 +71,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   Rails.application.routes.default_url_options[:host] = 'http://localhost:3000'
 
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 end
