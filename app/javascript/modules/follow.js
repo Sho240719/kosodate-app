@@ -16,35 +16,31 @@ function toggleFollowsDisplay(hasFollow) {
   }
 }
 
-function initializeFollows() {
-  document.addEventListener('turbo:load', () => {
 
-    // フォローする
-    $('.button-follow').on ('click', () => {
-      const accountId = $('.button-follow').data('account-id');
-      axios.post(`/api/accounts/${accountId}/follows`)
-      .then((response) => {
-        toggleFollowsDisplay(response.data.status);
-      })
-      .catch(error => {
-        console.error('フォローできませんでした', error);
-        alert('フォローできませんでした');
-      });
+document.addEventListener('turbo:load', () => {
+  // フォローする
+  $('.button-follow').on ('click', () => {
+    const accountId = $('.button-follow').data('account-id');
+    axios.post(`/api/accounts/${accountId}/follows`)
+    .then((response) => {
+      toggleFollowsDisplay(response.data.status)
     })
+    .catch(error => {
+      console.error('フォローできませんでした', error);
+      alert('フォローできませんでした');
+    });
+  });
 
-    // アンフォローする
-    $('.button-unfollow').on('click', () => {
-      const accountId = $('.button-unfollow').data('account-id');
-      axios.post(`/api/accounts/${accountId}/unfollows`)
-      .then((response) => {
-        toggleFollowsDisplay(response.data.status);
-      })
-      .catch(error => {
-        console.error('アンフォローできませんでした', error);
-        alert('アンフォローできませんでした');
-      });
+  // アンフォローする
+  $('.button-unfollow').on('click', () => {
+    const accountId = $('.button-unfollow').data('account-id');
+    axios.post(`/api/accounts/${accountId}/unfollows`)
+    .then((response) => {
+      toggleFollowsDisplay(response.data.status)
     })
-  })
-}
-
-export default initializeFollows;
+    .catch(error => {
+      console.error('アンフォローできませんでした', error);
+      alert('アンフォローできませんでした');
+    });
+  });
+});
