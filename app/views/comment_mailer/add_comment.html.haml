@@ -1,0 +1,4 @@
+%p #{@user.profile.nickname}さんから、あなたの以下の投稿にコメントが追加されました。
+%p 以下のリンクから返信してください。
+
+= link_to 'コメントを確認する', Rails.application.routes.url_helpers.post_url(@post)
