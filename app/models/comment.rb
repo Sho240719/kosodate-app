@@ -27,6 +27,9 @@ class Comment < ApplicationRecord
 
   def send_email
     recipient = post.user
+
+    return if user == recipient
+
     CommentMailer.add_comment(self, recipient).deliver_later
   end
 end
