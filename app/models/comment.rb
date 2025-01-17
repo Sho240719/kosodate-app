@@ -20,4 +20,13 @@ class Comment < ApplicationRecord
   belongs_to :post
 
   validates :content, presence: true, length: { maximum: 30 }
+
+  after_create :send_email
+
+  private
+
+  def send_email
+    recipient = post.user
+    CommentMailer.add_comment(self, recipient).deliver_now
+  end
 end
