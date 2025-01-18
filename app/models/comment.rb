@@ -26,6 +26,8 @@ class Comment < ApplicationRecord
   private
 
   def send_email
+    return if Rails.env.production?
+
     recipient = post.user
 
     return if user == recipient || !recipient.profile.notify_email
