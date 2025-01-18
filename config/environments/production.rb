@@ -93,4 +93,5 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = ENV.fetch('RAILS_HOST', 'https://familink-eb376f307ad1.herokuapp.com/')
 
   config.active_storage.service = :amazon
+  config.active_job.queue_adapter = :inline
 end
