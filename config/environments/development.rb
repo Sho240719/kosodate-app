@@ -76,4 +76,5 @@ Rails.application.configure do
   Rails.application.routes.default_url_options[:host] = 'http://localhost:3000'
 
   config.active_storage.service = :local
+  config.active_job.queue_adapter = :sidekiq
 end
