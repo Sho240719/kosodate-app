@@ -6,7 +6,8 @@
           = link_to account_path(@post.user) do
             = avatar_display(@post.user, class_name: 'post-avatar-icon')
         %span.user-name= @post.user.profile.nickname
-      = link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }
+      - if current_user == @post.user
+        = link_to '削除', post_path(@post), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' }
     .post-content
       %p= @post.content
     .post-action
