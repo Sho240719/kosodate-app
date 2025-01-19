@@ -28,7 +28,7 @@ class Post < ApplicationRecord
     return if content.blank?
 
     if prohibited_words.any? { |word| content.include?(word) }
-      errors.add(:content, 'に不適切な文字が含まれています。')
+      errors.add(:content, 'に不適切な文字が含まれています')
     end
   end
 end
