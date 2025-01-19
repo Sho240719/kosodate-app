@@ -1,5 +1,5 @@
 .tabs
-  .tabs-item.active
+  .tabs-item{class: "#{'active' if current_page?(posts_path)}"}
     = link_to '最新の投稿', posts_path
-  .tabs-item
+  .tabs-item{class: "#{'active' if current_page?(timeline_path)}"}
     = link_to 'いいねした投稿', timeline_path
