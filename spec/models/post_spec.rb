@@ -26,7 +26,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context '投稿内容が100文字以上の場合' do
+  context '投稿内容が101文字以上の場合' do
     let!(:post) { build(:post, content: Faker::Lorem.characters(number: 101), user: user) }
 
     before do
@@ -50,8 +50,8 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context '投稿内容にな場合' do
-    let(:post) { build(:post, content: '私はxxです', user: user) }
+  context '投稿内容に不適切な語句が入っている場合' do
+    let(:post) { build(:post, content: '私はあああです', user: user) }
 
     before do
       post.save

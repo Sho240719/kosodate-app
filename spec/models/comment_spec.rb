@@ -18,5 +18,38 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let!(:user) { create(:user) }
+  let!(:post) { create(:post, user: user) }
+
+  context 'コメントが入力されている場合' do
+    let!(:comment) { build(:comment, user: user, post: post) }
+
+    it 'コメントを保存できる' do
+      expect(comment).to be_valid
+    end
+  end
+
+  context 'コメントが入力されていない場合' do
+    let!(:comment) { build(:comment, content: nil, user: user, post: post) }
+
+    before do
+      comment.save
+    end
+
+    it 'コメントを保存できない' do
+      expect(comment.errors.messages[:content][0]).to eq('を入力してください')
+    end
+  end
+
+  context 'コメントが31文字以上の場合' do
+    let!(:comment) { build(:comment, content: Faker::Lorem.characters(number: 31), user: user, post: post )}
+
+    before do
+      comment.save
+    end
+
+    it 'コメントを保存できない' do
+      expect(comment.errors.messages[:content][0]).to eq('は30文字以内で入力してください')
+    end
+  end
 end
