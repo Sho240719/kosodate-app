@@ -1,6 +1,7 @@
 .container
   %h2 ポスト一覧
 
+  = render 'shared/tabs'
   - @posts.each do |post|
     = link_to post_path(post) do
       .post.post-index
