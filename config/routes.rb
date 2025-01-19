@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :accounts, only: [:show]
 
   resource :profile, only: [:show, :new, :create, :edit, :update]
+  resource :timeline, only: [:show]
 
   namespace :api do
     scope 'posts/:post_id' do
