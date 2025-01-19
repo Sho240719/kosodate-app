@@ -1,18 +1,1 @@
-.container
-  %h2 ポスト一覧
-
-  = render 'shared/tabs'
-  - @posts.each do |post|
-    = link_to post_path(post) do
-      .post.post-index
-        .post-header
-          .user-info
-            .avatar-image
-              = avatar_display(post.user, class_name: 'post-avatar-icon')
-            %span.user-name= post.user.profile.nickname
-          %span.post-timestamp= post.created_at.strftime('%Y-%m-%d')
-        .post-content
-          %p= post.content
-
-= link_to new_post_path do
-  = image_tag 'pencil_icon.png', class: 'pencil-icon'
+= render 'shared/posts', posts: @posts
