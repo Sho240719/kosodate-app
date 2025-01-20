@@ -24,11 +24,11 @@ class Post < ApplicationRecord
 
   private
   def validate_prohibited_words
-    prohibited_words = [ "xx", "yy" ]
+    prohibited_words = [ "あああ" ]
     return if content.blank?
 
     if prohibited_words.any? { |word| content.include?(word) }
-      errors.add(:content, 'に不適切な文字が含まれています。')
+      errors.add(:content, 'に不適切な文字が含まれています')
     end
   end
 end
