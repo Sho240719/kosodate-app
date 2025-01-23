@@ -8,9 +8,9 @@
       .user-profile-info
         %h3= user.profile.nickname
         .user-profile-details
-          %span.user-profile-detail-item= "年齢： #{user.profile.age}歳"
-          %span.user-profile-detail-item= "性別： #{user.profile.gender}"
-          %span.user-profile-detail-item= "地域： #{user.profile.region}"
+          %span.user-profile-detail-item= age_display(user)
+          %span.user-profile-detail-item= gender_display(user)
+          %span.user-profile-detail-item= region_display(user)
 
     - if defined?(link_label) && link_label.present? && defined?(link_path) && link_path.present?
       = link_to link_label, link_path, class: 'button-secondary'
