@@ -7,6 +7,7 @@
 #  content    :text(65535)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  title      :string(255)      not null
 #
 # Indexes
 #
@@ -19,6 +20,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 100 }
   validate :validate_prohibited_words
 
