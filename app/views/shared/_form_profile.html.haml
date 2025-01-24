@@ -23,7 +23,8 @@
 
     .form-group
       = f.label :region, '地域：'
-      = f.text_field :region, class: 'form-control'
+      = f.select :region,  Profile::PREFECTURES, { include_blank: "選択してください" }, class: 'form-control'
+
 
     .form-group
       = f.label :introduction, '自己紹介', class: 'form-introduction-label'
