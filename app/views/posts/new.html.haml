@@ -1,5 +1,5 @@
 .container
-  %h2 ポストを作成
+  %h2 投稿を作成
 
   .post.post-new
     = link_to 'キャンセル', posts_path,class: 'cancel'
@@ -11,5 +11,9 @@
 
     = form_with(model: @post, local: true) do |f|
       .post-form
-        = f.text_area :content, class: 'post-textarea', placeholder: '投稿内容を入力してください'
-        = f.submit '投稿する', class: 'btn-primary post-btn'
+        .post-form-title
+          = f.text_field :title, class: 'post-form-text', placeholder: '投稿タイトルを入力してください'
+        .post-form-content
+          = f.text_area :content, class: 'post-form-textarea', placeholder: '投稿内容を入力してください'
+        .post-form-action
+          = f.submit '投稿する', class: 'btn-primary post-btn'

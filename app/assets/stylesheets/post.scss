@@ -102,6 +102,14 @@
     position: absolute;
     top: 25px;
     right: 30px;
+    padding: 10px;
+
+    &:hover {
+      color: #fff;
+      background-color: $secondary-color;
+      transition: background-color 0.5s;
+      border-radius: 5px;
+    }
   }
 
   .post-avatar-icon {
@@ -115,8 +123,18 @@
     flex-direction: column;    /* 子要素を縦に並べる */
     align-items: center;       /* 子要素を横方向に中央寄せ */
     justify-content: center;   /* 子要素を縦方向に中央寄せ（高さ調整） */
+    margin-bottom: 10px;
 
-    .post-textarea {
+    &-title {
+      margin-top: 15px;
+    }
+
+    &-text {
+      width: 500px;
+      margin-bottom: 30px;
+    }
+
+    &-textarea {
       width: 500px;
       height: 200px;
     }
