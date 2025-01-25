@@ -27,7 +27,7 @@
 
     .post-timestamp {
       font-size: 0.8rem;
-      color: #999;
+      color: $text-color-sub;
     }
   }
 
@@ -42,10 +42,15 @@
   }
 }
 
+.post-title-text {
+  color: $text-color-sub;
+}
+
 // indexページ
 .post-index {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px 30px;
+  margin: 0 auto 20px;
+  width: 1000px;
 
   .post-avatar-icon {
     width: 40px;
