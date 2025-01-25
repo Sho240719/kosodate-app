@@ -115,7 +115,7 @@
 // newページ
 .post-new {
   height: 400px;
-  padding: 50px 90px;
+  padding: 50px 80px;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -143,9 +143,9 @@
 
   .post-form {
     display: flex;
-    flex-direction: column;    /* 子要素を縦に並べる */
-    align-items: center;       /* 子要素を横方向に中央寄せ */
-    justify-content: center;   /* 子要素を縦方向に中央寄せ（高さ調整） */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
 
     &-title {
@@ -155,15 +155,23 @@
     &-text {
       width: 500px;
       margin-bottom: 30px;
+      margin-right: 35px;
     }
 
     &-textarea {
       width: 500px;
       height: 200px;
+      margin-left: 60px;
     }
 
     .post-btn {
       margin-top: 15px;
     }
   }
+}
+
+#char-count {
+  margin-left: 10px;
+  width: 82px;
+  display: inline-block;
 }
