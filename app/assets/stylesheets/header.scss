@@ -29,9 +29,13 @@
     margin-left: 15px;
     padding: 5px 12px;
     color: #fff;
+    padding: 23px 10px;
 
     &:hover {
-      color: $text-color;
+      color: #fff;
+      background-color: darken($primary-color, 10%);
+      transition: background-color 0.5s;
+      border-radius: 5px;
     }
   }
 }
