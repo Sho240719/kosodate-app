@@ -63,6 +63,15 @@
   z-index: 10;
 }
 
+.post-category {
+  background-color: #fff;
+  border: solid 1px $secondary-color;
+  border-radius: 30px;
+  color: $secondary-color;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
+
 // showページ
 .post-show {
   max-width: 1000px;
@@ -148,6 +157,14 @@
     justify-content: center;
     margin-bottom: 10px;
 
+    &-category {
+      margin-right: 200px;
+
+      &-text {
+        color: $text-color-sub;
+      }
+    }
+
     &-title {
       margin-top: 15px;
     }
@@ -167,14 +184,6 @@
     .post-btn {
       margin-top: 15px;
     }
-  }
-}
-
-.post-category {
-  margin-right: 200px;
-
-  &-text {
-    color: $text-color-sub;
   }
 }
 

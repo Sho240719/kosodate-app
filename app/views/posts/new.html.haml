@@ -11,9 +11,9 @@
 
     = form_with(model: @post, local: true) do |f|
       .post-form
-        .post-category
-          = f.label :category, 'カテゴリーを選択してください', class: 'post-category-text'
-          = f.select :category, [['未選択', nil], ['お悩み相談', 0], ['日常の投稿', 1], ['友達づくり', 2]]
+        .post-form-category
+          = f.label :category, 'カテゴリーを選択してください', class: 'post-form-category-text'
+          = f.select :category, [['未選択', nil], ['お悩み相談', 'お悩み相談'], ['日常の投稿', '日常の投稿'], ['友達づくり', '友達づくり']]
         .post-form-title
           = f.text_field :title, class: 'post-form-text', placeholder: '投稿タイトルを入力してください'
         .post-form-content
