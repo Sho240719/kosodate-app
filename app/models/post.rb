@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  title      :string(255)      not null
+#  category   :integer          not null
 #
 # Indexes
 #
@@ -19,6 +20,8 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+
+  enum category: { worry: 0, daily: 1, friend: 2 }
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 100 }
