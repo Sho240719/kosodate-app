@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :posts, only: [:index, :show, :new, :create, :destroy]
+  resources :worries, only: [:index]
+  resources :dailies, only: [:index]
+  resources :friends, only: [:index]
   resources :accounts, only: [:show]
 
   resource :profile, only: [:show, :new, :create, :edit, :update]

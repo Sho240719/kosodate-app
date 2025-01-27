@@ -1,5 +1,5 @@
 .tabs
-  .tabs-item{class: "#{add_active_class(posts_path)}"}
+  .tabs-item{class: "#{add_active_class([posts_path, worries_path, dailies_path, friends_path])}"}
     = link_to '最新の投稿', posts_path
   .tabs-item{class: "#{add_active_class(timeline_path)}"}
     = link_to 'いいねした投稿', timeline_path

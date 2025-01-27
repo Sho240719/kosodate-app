@@ -1,5 +1,7 @@
 .container
   %h2 投稿一覧
+  .category
+    =render 'shared/categories'
 
   = render 'shared/tabs'
   - posts.each do |post|
@@ -10,6 +12,7 @@
             .avatar-image
               = avatar_display(post.user, class_name: 'post-avatar-icon')
             %span.user-name= post.user.profile.nickname
+            %span.post-category= t("enums.post.category.#{post.category}")
           %span.post-timestamp= post.created_at.strftime('%Y-%m-%d')
         %p.post-title
           %span.post-title-text タイトル：

@@ -63,6 +63,15 @@
   z-index: 10;
 }
 
+.post-category {
+  background-color: #fff;
+  border: solid 1px $secondary-color;
+  border-radius: 30px;
+  color: $secondary-color;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
+
 // showページ
 .post-show {
   max-width: 1000px;
@@ -114,7 +123,7 @@
 
 // newページ
 .post-new {
-  height: 400px;
+  height: 450px;
   padding: 50px 80px;
   display: flex;
   gap: 1rem;
@@ -147,6 +156,14 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+
+    &-category {
+      margin-right: 200px;
+
+      &-text {
+        color: $text-color-sub;
+      }
+    }
 
     &-title {
       margin-top: 15px;

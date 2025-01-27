@@ -1,0 +1,27 @@
+@import 'variables';
+
+.category {
+  margin-left: 285px;
+
+  &-item {
+    background-color: #fff;
+    border: solid 1px $secondary-color;
+    border-radius: 5px;
+    color: $secondary-color;
+    display: inline-block;
+    margin-right: 30px;
+    padding: 10px 30px;
+    transition: background-color 0.5s;
+    width: 150px;
+
+    &.active {
+      background-color: $secondary-color;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+      color: #fff;
+    }
+  }
+}
