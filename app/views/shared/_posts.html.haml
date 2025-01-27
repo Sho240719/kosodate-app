@@ -1,5 +1,5 @@
 .container
-  %h2 ポスト一覧
+  %h2 投稿一覧
 
   = render 'shared/tabs'
   - posts.each do |post|
@@ -11,8 +11,9 @@
               = avatar_display(post.user, class_name: 'post-avatar-icon')
             %span.user-name= post.user.profile.nickname
           %span.post-timestamp= post.created_at.strftime('%Y-%m-%d')
-        .post-content
-          %p= post.content
+        %p.post-title
+          %span.post-title-text タイトル：
+          = post.title
 
 = link_to new_post_path do
   = image_tag 'pencil_icon.png', class: 'pencil-icon'

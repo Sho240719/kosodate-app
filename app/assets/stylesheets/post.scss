@@ -27,13 +27,8 @@
 
     .post-timestamp {
       font-size: 0.8rem;
-      color: #999;
+      color: $text-color-sub;
     }
-  }
-
-  &-content {
-    color: $text-color;
-    margin-bottom: 2rem;
   }
 
   &-actions {
@@ -42,10 +37,15 @@
   }
 }
 
+.post-title-text {
+  color: $text-color-sub;
+}
+
 // indexページ
 .post-index {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px 30px;
+  margin: 0 auto 20px;
+  width: 1000px;
 
   .post-avatar-icon {
     width: 40px;
@@ -66,7 +66,7 @@
 // showページ
 .post-show {
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 60px auto 20px;
   padding: 30px;
 
   .post-avatar-icon {
@@ -89,10 +89,33 @@
   }
 }
 
+.post-content {
+  color: $text-color-sub;
+  margin-bottom: 10px;
+}
+
+.post-content-text {
+  border: solid 1px $border-color;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.delete-post {
+  padding: 10px;
+  color: $text-color-sub;
+
+  &:hover {
+    color: #fff;
+    background-color: $secondary-color;
+    transition: background-color 0.5s;
+    border-radius: 5px;
+  }
+}
+
 // newページ
 .post-new {
   height: 400px;
-  padding: 50px 90px;
+  padding: 50px 80px;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -102,6 +125,14 @@
     position: absolute;
     top: 25px;
     right: 30px;
+    padding: 10px;
+
+    &:hover {
+      color: #fff;
+      background-color: $secondary-color;
+      transition: background-color 0.5s;
+      border-radius: 5px;
+    }
   }
 
   .post-avatar-icon {
@@ -112,17 +143,35 @@
 
   .post-form {
     display: flex;
-    flex-direction: column;    /* 子要素を縦に並べる */
-    align-items: center;       /* 子要素を横方向に中央寄せ */
-    justify-content: center;   /* 子要素を縦方向に中央寄せ（高さ調整） */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 
-    .post-textarea {
+    &-title {
+      margin-top: 15px;
+    }
+
+    &-text {
+      width: 500px;
+      margin-bottom: 30px;
+      margin-right: 35px;
+    }
+
+    &-textarea {
       width: 500px;
       height: 200px;
+      margin-left: 60px;
     }
 
     .post-btn {
       margin-top: 15px;
     }
   }
+}
+
+#char-count {
+  margin-left: 10px;
+  width: 82px;
+  display: inline-block;
 }

@@ -4,3 +4,4 @@ import 'controllers'
 import "modules/comment"
 import "modules/like"
 import "modules/follow"
+import "modules/post"

@@ -12,7 +12,7 @@ function renderComment(comment) {
 
   $('.comments-section').append(`
     <div class="comment-item" data-comment-id="${comment.id}">
-      ${comment.is_own_comment ? `<span class="delete">削除</span>` : ""}
+      ${comment.is_own_comment ? `<span class="delete-comment">削除</span>` : ""}
       <div class="comment-header">
         <div class="comment-user-info">
           <img src="${avatarImageUrl}" class="comment-avatar-icon">

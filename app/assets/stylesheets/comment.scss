@@ -34,6 +34,10 @@
   }
 }
 
+.comment-timestamp {
+  color: $text-color-sub;
+}
+
 .show-comment-button, .add-comment-button {
   max-width: 800px;
   margin: 0 auto;
@@ -58,8 +62,17 @@
   }
 }
 
-.delete {
+.delete-comment {
+  color: $text-color-sub;
   position: absolute;
   top: 5px;
   right: 10px;
+  padding: 5px;
+
+  &:hover {
+    color: #fff;
+    background-color: $secondary-color;
+    transition: background-color 0.5s;
+    border-radius: 5px;
+  }
 }
