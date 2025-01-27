@@ -114,7 +114,7 @@
 
 // newページ
 .post-new {
-  height: 400px;
+  height: 450px;
   padding: 50px 80px;
   display: flex;
   gap: 1rem;
@@ -167,6 +167,14 @@
     .post-btn {
       margin-top: 15px;
     }
+  }
+}
+
+.post-category {
+  margin-right: 200px;
+
+  &-text {
+    color: $text-color-sub;
   }
 }
 
