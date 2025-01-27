@@ -3,7 +3,7 @@
   .category
     = link_to '全ての投稿', posts_path, class: 'category-item'
     = link_to 'お悩み相談', worries_path, class: 'category-item'
-    %span.category-item 日常の投稿
+    = link_to '日常の投稿', dailies_path, class: 'category-item'
     %span.category-item 友達づくり
 
   = render 'shared/tabs'
