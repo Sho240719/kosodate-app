@@ -1,10 +1,7 @@
 .container
   %h2 投稿一覧
   .category
-    = link_to '全ての投稿', posts_path, class: 'category-item'
-    = link_to 'お悩み相談', worries_path, class: 'category-item'
-    = link_to '日常の投稿', dailies_path, class: 'category-item'
-    = link_to '友達づくり', friends_path, class: 'category-item'
+    =render 'shared/categories'
 
   = render 'shared/tabs'
   - posts.each do |post|
