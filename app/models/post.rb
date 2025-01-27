@@ -21,7 +21,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  enum category: { お悩み相談: 0, 日常の投稿: 1, 友達づくり: 2 }
+  enum category: { worry: 0, daily: 1, friend: 2 }
 
   validates :title, presence: true, length: { maximum: 50 }
   validates :content, presence: true, length: { maximum: 100 }

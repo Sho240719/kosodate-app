@@ -13,7 +13,7 @@
       .post-form
         .post-form-category
           = f.label :category, 'カテゴリーを選択してください', class: 'post-form-category-text'
-          = f.select :category, [['未選択', nil], ['お悩み相談', 'お悩み相談'], ['日常の投稿', '日常の投稿'], ['友達づくり', '友達づくり']]
+          = f.select :category, [['未選択', nil], ['お悩み相談', 'worry'], ['日常の投稿', 'daily'], ['友達づくり', 'friend']]
         .post-form-title
           = f.text_field :title, class: 'post-form-text', placeholder: '投稿タイトルを入力してください'
         .post-form-content

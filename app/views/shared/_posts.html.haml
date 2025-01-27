@@ -1,8 +1,8 @@
 .container
   %h2 投稿一覧
   .category
-    %span.category-item.active 全ての投稿
-    %span.category-item お悩み相談
+    = link_to '全ての投稿', posts_path, class: 'category-item'
+    = link_to 'お悩み相談', worries_path, class: 'category-item'
     %span.category-item 日常の投稿
     %span.category-item 友達づくり
 
@@ -15,7 +15,7 @@
             .avatar-image
               = avatar_display(post.user, class_name: 'post-avatar-icon')
             %span.user-name= post.user.profile.nickname
-            %span.post-category= post.category
+            %span.post-category= t("enums.post.category.#{post.category}")
           %span.post-timestamp= post.created_at.strftime('%Y-%m-%d')
         %p.post-title
           %span.post-title-text タイトル：
