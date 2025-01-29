@@ -65,7 +65,7 @@ document.addEventListener("turbo:load", () => {
     });
 
     // コメントを削除
-    $('.comments-section').on('click', '.delete', function() {
+    $('.comments-section').on('click', '.delete-comment', function() {
       const commentItem = $(this).closest('.comment-item');
       const commentId = commentItem.data('comment-id');
 
