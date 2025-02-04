@@ -22,6 +22,13 @@
         %span.button-secondary.button-follow{ data: { account_id: account_id } } フォロー
         %span.button-secondary.button-unfollow.hidden{ data: { account_id: account_id } } アンフォロー
 
+    = link_to '#' do
+      %span.following-count 0
+      %span.following-text フォロー中
+    = link_to '#' do
+      %span.follower-count 0
+      %span.follower-text フォロワー
+
     .user-profile-introduction
       %p.user-profile-label 自己紹介
       %p.user-profile-value= user.profile.introduction

@@ -49,6 +49,17 @@
   border-radius: 30px;
 }
 
+.following-count,
+.follower-count {
+  margin-left: 30px;
+  width: 30px;
+}
+
+.following-text,
+.follower-text {
+  color: $text-color-sub;
+}
+
 // プロフィールのフォーム
 .forms {
   padding: 30px;
