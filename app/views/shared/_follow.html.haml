@@ -1,0 +1,5 @@
+- follows.each do |user|
+  = link_to account_path(user) do
+    .follow-user-list
+      = avatar_display(user, class_name: 'follow-avatar-icon')
+      %p.follow-user-name= user.profile.nickname

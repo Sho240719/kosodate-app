@@ -16,6 +16,20 @@ function toggleFollowsDisplay(hasFollow) {
   }
 }
 
+// フォローされた、外されたときにフォロワー数を変更して表示する関数
+function changeFollowCount (accountId) {
+  const followerCount = $(".follower-count");
+  axios.get(`/accounts/${accountId}/followers`)
+  .then((response) => {
+    console.log(response.data.follower_count);
+    followerCount.text(`${response.data.follower_count}`);
+  })
+  .catch(error => {
+    console.error('フォロワーカウントを更新できませんでした', error);
+    alert('フォロワーカウントを更新できませんでした');
+  });
+}
+
 
 document.addEventListener('turbo:load', () => {
   // フォローする
@@ -24,6 +38,7 @@ document.addEventListener('turbo:load', () => {
     axios.post(`/api/accounts/${accountId}/follows`)
     .then((response) => {
       toggleFollowsDisplay(response.data.status)
+      changeFollowCount (accountId)
     })
     .catch(error => {
       console.error('フォローできませんでした', error);
@@ -37,6 +52,7 @@ document.addEventListener('turbo:load', () => {
     axios.post(`/api/accounts/${accountId}/unfollows`)
     .then((response) => {
       toggleFollowsDisplay(response.data.status)
+      changeFollowCount (accountId)
     })
     .catch(error => {
       console.error('アンフォローできませんでした', error);
