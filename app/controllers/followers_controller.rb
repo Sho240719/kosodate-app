@@ -4,5 +4,7 @@ class FollowersController < ApplicationController
   def index
     @user = User.find(params[:account_id])
     @followers = @user.followers
+
+    render json: { follower_count: @followers.count }
   end
 end
