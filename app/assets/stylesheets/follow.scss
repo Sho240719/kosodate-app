@@ -1,0 +1,33 @@
+@import "variables";
+
+.following-list {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.follow-headline {
+  margin-left: 250px;
+  margin-bottom: 50px;
+}
+
+.follow-user-list {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $border-color;
+  padding: 20px 10px;
+}
+
+.follow-avatar-icon {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.follow-user-name {
+  color: $text-color-sub;
+  margin-left: 20px;
+}
