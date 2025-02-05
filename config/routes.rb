@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :accounts, only: [:show] do
     resources :followings, only: [:index]
+    resources :followers, only: [:index]
   end
 
   namespace :api do

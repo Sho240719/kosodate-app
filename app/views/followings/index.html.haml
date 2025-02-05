@@ -1,8 +1,3 @@
-.following-list
-  %h2.follow-headline フォロー中のユーザー
-
-  - @followings.each do |user|
-    = link_to account_path(user) do
-      .follow-user-list
-        = avatar_display(user, class_name: 'follow-avatar-icon')
-        %p.follow-user-name= user.profile.nickname
+.follow-list
+  %h2.follow-headline フォロー中
+  = render 'shared/follow', follows: @followings

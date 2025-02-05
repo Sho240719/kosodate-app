@@ -25,8 +25,8 @@
     = link_to account_followings_path(user) do
       %span.following-count= user.followings.count
       %span.following-text フォロー中
-    = link_to '#' do
-      %span.follower-count 0
+    = link_to account_followers_path(user) do
+      %span.follower-count= user.followers.count
       %span.follower-text フォロワー
 
     .user-profile-introduction
